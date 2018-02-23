@@ -37,6 +37,7 @@ setup(
     author='Valeryi Savich',
     author_email='relrin78@gmail.com',
     description='Flask-like extension support for Sanic framework',
+    long_description=read('README.rst'),
     packages=get_packages('sanic_base_ext'),
     include_package_data=True,
     zip_safe=False,
