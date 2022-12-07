@@ -17,13 +17,13 @@ class BaseExtension(object):
             self.init_app(app, *args, **kwargs)
 
     def _register_extension(self, app, *args, **kwargs):
-        if not hasattr(app, 'extensions'):
-            setattr(app, 'extensions', {})
+        if not hasattr(app.ctx, 'extensions'):
+            setattr(app.ctx, 'extensions', {})
 
-        app.extensions[self.extension_name] = self
+        app.ctx.extensions[self.extension_name] = self
 
     def init_app(self, app, *args, **kwargs):
-        setattr(app, self.app_attribute, self)
+        setattr(app.ctx, self.app_attribute, self)
 
     def get_from_app_config(self, app, parameter, default=None):
         return getattr(app.config, parameter, default)
