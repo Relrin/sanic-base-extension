@@ -30,8 +30,8 @@ Example
 
 
     app = Sanic(__name__)
-    CustomExtension()  # available via `app.custom` or `app.extensions['custom']`
-    app.custom.hello('world')  # Hello, world!
+    CustomExtension(app)  # available via `app.custom` or `app.extensions['custom']`
+    app.ctx.custom.hello('world')  # Hello, world!
 
 License
 =======
